@@ -11,6 +11,8 @@
 
 * {  
   scroll-behavior: smooth;
+  align-items:center;
+  text-align: center;
 }
 
 body {
@@ -19,15 +21,15 @@ body {
 	display: inline;
 	align-items: center;
     justify-content: center;
-    background-color: #F4F7FC;
+    background-color: #dae7fa;
     margin: 40px;
 }
 
 .title {
   margin: 20px;
   font-weight: 600;
-  font-size: 35px;
-  color: #a3a3a3;
+  font-size: 3rem;
+  color: #770909;
 }
 
 .card {
@@ -39,7 +41,7 @@ body {
   text-align: center;
   transition: 0.8s;
   box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
-    -7px -7px 20px rgba(255, 255, 255, 1),
+    -7px -7px 20px rgb(252, 233, 233),
     inset 0px 0px 4px rgba(255, 255, 255, 0.2),
     inset 7px 7px 15px rgba(55, 84, 170, 0),
     inset -7px -7px 20px rgba(255, 255, 255, 0),
@@ -67,9 +69,11 @@ body {
   background: #fff;
   display: block;
   margin: 20px;
+  margin-left: 15%;
+  margin-right: 10%;
   text-align: center;
     box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
-    -7px -7px 20px rgba(255, 255, 255, 1),
+    -7px -7px 20px rgb(235, 213, 213),
     inset 0px 0px 4px rgba(255, 255, 255, 0.2),
     inset 7px 7px 15px rgba(55, 84, 170, 0),
     inset -7px -7px 20px rgba(255, 255, 255, 0),
@@ -109,7 +113,7 @@ body {
   text-align: center;
   transition: 0.8s;
   box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
-    -7px -7px 20px rgba(255, 255, 255, 1),
+    -7px -7px 20px rgb(238, 212, 212),
     inset 0px 0px 4px rgba(255, 255, 255, 0.2),
     inset 7px 7px 15px rgba(55, 84, 170, 0),
     inset -7px -7px 20px rgba(255, 255, 255, 0),
@@ -119,19 +123,13 @@ body {
 }
 
 .footer {
+  margin-top: 2%;
   text-align: center;
   padding-bottom: 20px;
+  font-family: monospace;
 }
 
-.footer-love-icon {
-  height: 10px;
-  padding-left: 1px;
-  padding-right: 1px;
-  animation: beat .55s infinite alternate;
-}
-@keyframes beat{
-  to { transform: scale(1.4); }
-}
+
 
 #total {
   border-bottom: 5px solid #d63031;
@@ -150,7 +148,13 @@ body {
 }
 
 canvas {
-    border: thin solid #333333;
+    border: thin solid #3b0707e8;
+    box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+    -7px -7px 20px rgb(252, 233, 233),
+    inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+    inset 7px 7px 15px rgba(55, 84, 170, 0),
+    inset -7px -7px 20px rgba(255, 255, 255, 0),
+    0px 0px 4px rgba(255, 255, 255, 0);
 }
 
 .person {
@@ -160,13 +164,34 @@ canvas {
     width: 800px;
     margin: 0 auto;
     text-align: center;
+    box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+    -7px -7px 20px rgb(252, 233, 233),
+    inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+    inset 7px 7px 15px rgba(55, 84, 170, 0),
+    inset -7px -7px 20px rgba(255, 255, 255, 0),
+    0px 0px 4px rgba(255, 255, 255, 0);
+    
+}
+.precautions{
+padding-bottom: 2rem;
+color: rgb(20, 18, 18);
+font-family: sans-serif;
+font-size: 2.5 rem; 
+box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
+    -7px -7px 20px rgb(100, 195, 224),
+    inset 0px 0px 4px rgba(255, 255, 255, 0.2),
+    inset 7px 7px 15px rgba(55, 84, 170, 0),
+    inset -7px -7px 20px rgba(255, 255, 255, 0),
+    0px 0px 4px rgba(255, 255, 255, 0);
+
+   
 }
 
 </style>
 <body onload="init()">
 
     <div class="header">
-        <div id="title" class="title">COVID-19 STATISTICS</div>
+        <div id="title" class="title">COVPRO</div>
         <div id="total" class="card">
           <div class="stats">
             <div class="number">12345</div>
@@ -193,17 +218,13 @@ canvas {
         </div>
         <div class="flags">
         </div>
-        <div class="footer">
-          <b>Disclaimer</b>: This is <b>not</b> an <b>official</b> site. <br>
-          Data Collected from <a href="https://thevirustracker.com">thevirustracker.com</a> API. <br>
-          Made by <b>team 4</b>
-        </div>
+        
       </div>
       <div class="graphs">
-      <h1>COVID-19 virus infection JS<br/>simulation graph</h1>
+      <h1>How does Covid-19 spread?<br/>(simulation graph)</h1>
     
     <p>
-    If people move, how do they get infected?
+    If people move, how do they get infected? Set the number of people and you will get your answer.
     </p>
     <div class="person">
         Person Count：<span id="value">1</span>
@@ -213,17 +234,24 @@ canvas {
     <canvas id="graph" width="600" height="100"></canvas><br>
     <canvas id="city" width="600" height="600"></canvas>
       </div>  
-      <section>
+
+      <div class="precautions">
 	      <h2> <b> Precautions </b> </h2>
-	      <li>
-		      <ol> Clean your hands often. Use soap and water, or an alcohol-based hand rub. </ol>
-		      <ol> Maintain a safe distance from anyone who is coughing or sneezing. </ol>
-		      <ol> Wear a mask when physical distancing is not possible. </ol>
-		      <ol> Don’t touch your eyes, nose or mouth. </ol>
-		      <ol> If you have a fever, cough and difficulty breathing, seek medical attention. </ol>
-	      </li>
-			      
-	</section>
+	     <p>
+		      <li> Clean your hands often. Use soap and water, or an alcohol-based hand rub. </li>
+		      <li> Maintain a safe distance from anyone who is coughing or sneezing. </li>
+		      <li> Wear a mask when physical distancing is not possible. </li>
+		      <li> Don’t touch your eyes, nose or mouth. </li>
+		      <li> If you have a fever, cough and difficulty breathing, seek medical attention. </li>
+        
+			</p>      
+      </div>
+  
+      <div class="footer">
+        <b>Disclaimer</b>: This is <b>not</b> an <b>official</b> site. <br>
+        Data Collected from <a href="https://thevirustracker.com">thevirustracker.com</a> API. <br>
+        Made by <b>Team 4</b>
+      </div>     
 
     <script>
         setInterval(function(){fetch('https://api.thevirustracker.com/free-api?global=stats')
