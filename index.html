@@ -23,103 +23,22 @@ body {
     justify-content: center;
     background-color: #dae7fa;
     margin: 40px;
+    background-image: url("https://images.unsplash.com/photo-1584461800203-e8b0a2fd55ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80");
+  background-size: cover;
 }
 
 .title {
-  margin: 20px;
+  margin: 10px;
   font-weight: 600;
   font-size: 3rem;
-  color: #770909;
+  color: #ffecec;
+ 
+ 
 }
 
-.card {
-  width: 200px;
-  height: 200px;
-  background: #fff;
-  display: inline-block;
-  margin: 20px;
-  text-align: center;
-  transition: 0.8s;
-  box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
-    -7px -7px 20px rgb(252, 233, 233),
-    inset 0px 0px 4px rgba(255, 255, 255, 0.2),
-    inset 7px 7px 15px rgba(55, 84, 170, 0),
-    inset -7px -7px 20px rgba(255, 255, 255, 0),
-    0px 0px 4px rgba(255, 255, 255, 0);
-    transition: 0.8s;
-}
-
-.header .card .stats {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.number {
-  font-size: 35px;
-  font-weight: 600;
-}
-.factor {
-  color: #a3a3a3;
-}
-
-.flags {
-  max-width: 930px;
-  background: #fff;
-  display: block;
-  margin: 20px;
-  margin-left: 15%;
-  margin-right: 10%;
-  text-align: center;
-    box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
-    -7px -7px 20px rgb(235, 213, 213),
-    inset 0px 0px 4px rgba(255, 255, 255, 0.2),
-    inset 7px 7px 15px rgba(55, 84, 170, 0),
-    inset -7px -7px 20px rgba(255, 255, 255, 0),
-    0px 0px 4px rgba(255, 255, 255, 0);
-  padding-bottom: 20px;
-}
-
-.flags img {
-  margin: 20px;
-}
-
-.flag {
-  display: inline-block;
-  cursor: pointer;
-}
-
-.flag div {
-  display: block;
-  font-size: 10px;
-  width: 92px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.active {
-  box-shadow: 2px 3px 5px 0px black;
-}
-
-@media screen and (max-width: 1020px) {
-.card {
-  width: 100%;
-  height: 200px;
-  background: #fff;
-  display: inline-block;
-  margin: 20px;
-  text-align: center;
-  transition: 0.8s;
-  box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
-    -7px -7px 20px rgb(238, 212, 212),
-    inset 0px 0px 4px rgba(255, 255, 255, 0.2),
-    inset 7px 7px 15px rgba(55, 84, 170, 0),
-    inset -7px -7px 20px rgba(255, 255, 255, 0),
-    0px 0px 4px rgba(255, 255, 255, 0);
-    transition: 0.8s;
-}
+.title h2, h3{
+  color: rgb(184, 212, 236);
+  font-size: 0.8rem;;
 }
 
 .footer {
@@ -131,21 +50,6 @@ body {
 
 
 
-#total {
-  border-bottom: 5px solid #d63031;
-}
-
-#recover {
-  border-bottom: 5px solid #00b894;
-}
-
-#sick {
-  border-bottom: 5px solid #0984e3; 
-}
-
-#dead {
-  border-bottom: 5px solid red;  
-}
 
 canvas {
     border: thin solid #3b0707e8;
@@ -164,6 +68,8 @@ canvas {
     width: 800px;
     margin: 0 auto;
     text-align: center;
+    font-family: Monserrat;
+    color: #ffecec;
     box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
     -7px -7px 20px rgb(252, 233, 233),
     inset 0px 0px 4px rgba(255, 255, 255, 0.2),
@@ -172,54 +78,37 @@ canvas {
     0px 0px 4px rgba(255, 255, 255, 0);
     
 }
+.graph h1{
+  text-align: center;
+    font-family: Monserrat;
+    color: #ffecec;
+}
 .precautions{
 padding-bottom: 2rem;
+margin-bottom: 20px;
 color: rgb(20, 18, 18);
 font-family: sans-serif;
-font-size: 2.5 rem; 
-box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
-    -7px -7px 20px rgb(100, 195, 224),
-    inset 0px 0px 4px rgba(255, 255, 255, 0.2),
-    inset 7px 7px 15px rgba(55, 84, 170, 0),
-    inset -7px -7px 20px rgba(255, 255, 255, 0),
-    0px 0px 4px rgba(255, 255, 255, 0);
+font-size: 3 rem; 
+background-color: rgb(235, 129, 43);
+width: 100%;
 
-   
+
 }
+
 
 </style>
 <body onload="init()">
 
     <div class="header">
         <div id="title" class="title">COVPRO</div>
-        <div id="total" class="card">
-          <div class="stats">
-            <div class="number">12345</div>
-            <div class="factor">Total</div>
-          </div>    
-        </div>
-        <div id="recover" class="card">
-          <div class="stats">
-            <div class="number">12345</div>
-            <div class="factor">Total</div>
-          </div> 
-        </div>
-        <div id="sick" class="card">
-          <div class="stats">
-            <div class="number">12345</div>
-            <div class="factor">Total</div>
-          </div> 
-        </div>
-        <div id="dead" class="card">
-          <div class="stats">
-            <div class="number">12345</div>
-            <div class="factor">Total</div>
-          </div> 
-        </div>
-        <div class="flags">
-        </div>
+        <h3>Brings to you the live updates regarding covid-19 globally and more...<br>
+      Our motto is "STOP THE SPREAD".</h3>
         
+        <div class="flourish-embed flourish-map" data-src="story/555214"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        <div class="flourish-embed flourish-chart" data-src="story/230110"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+        <div class="flourish-embed flourish-map" data-src="story/225979"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
       </div>
+      <img src="https://images.unsplash.com/photo-1588615419942-9f1d6b4f04fc?ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80" width="100%" alt="">
       <div class="graphs">
       <h1>How does Covid-19 spread?<br/>(simulation graph)</h1>
     
@@ -234,7 +123,7 @@ box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
     <canvas id="graph" width="600" height="100"></canvas><br>
     <canvas id="city" width="600" height="600"></canvas>
       </div>  
-
+    
       <div class="precautions">
 	      <h2> <b> Precautions </b> </h2>
 	     <p>
@@ -246,169 +135,17 @@ box-shadow: 7px 7px 15px rgba(55, 84, 170, 0.15),
         
 			</p>      
       </div>
+      <img src="https://images.unsplash.com/photo-1588774210246-a1dc467758df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80" width="100%" height="500" alt="">
+    
+
   
       <div class="footer">
         <b>Disclaimer</b>: This is <b>not</b> an <b>official</b> site. <br>
-        Data Collected from <a href="https://thevirustracker.com">thevirustracker.com</a> API. <br>
         Made by <b>Team 4</b>
       </div>     
 
     <script>
-        setInterval(function(){fetch('https://api.thevirustracker.com/free-api?global=stats')
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-  
-  document.getElementById('title').innerText = "COVID-19 STATISTICS - GLOBAL";
-  
-    
-  document.getElementById('total').innerHTML = `<div class="stats">
-      <div class="number">${data.results[0].total_cases}</div>
-      <div class="factor">Infected</div>
-    </div>`;
-  
-  document.getElementById('recover').innerHTML = `<div class="stats">
-      <div class="number">${data.results[0].total_recovered}</div>
-      <div class="factor">Recovered</div>
-    </div>`;
-  
-  document.getElementById('sick').innerHTML = `<div class="stats">
-      <div class="number">${data.results[0].total_active_cases}</div>
-      <div class="factor">Sick</div>
-    </div>`;
-  
-  document.getElementById('dead').innerHTML = `<div class="stats">
-      <div class="number">${data.results[0].total_deaths}</div>
-      <div class="factor">Deaths</div>
-    </div>`; 
-    
-  });}, 120000);
-
-fetch('https://api.thevirustracker.com/free-api?global=stats')
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-  
-  document.getElementById('title').innerText = "COVID-19 STATISTICS - GLOBAL";
-    
-  document.getElementById('total').innerHTML = `<div class="stats">
-      <div class="number">${data.results[0].total_cases}</div>
-      <div class="factor">Infected</div>
-    </div>`;
-  
-  document.getElementById('recover').innerHTML = `<div class="stats">
-      <div class="number">${data.results[0].total_recovered}</div>
-      <div class="factor">Recovered</div>
-    </div>`;
-  
-  document.getElementById('sick').innerHTML = `<div class="stats">
-      <div class="number">${data.results[0].total_active_cases}</div>
-      <div class="factor">Sick</div>
-    </div>`;
-  
-  document.getElementById('dead').innerHTML = `<div class="stats">
-      <div class="number">${data.results[0].total_deaths}</div>
-      <div class="factor">Deaths</div>
-    </div>`;    
-  });
-
-
-const flagDiv = document.getElementsByClassName('flags')[0];
-
-
-fetch('https://restcountries.eu/rest/v2/all')
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
- data.forEach(function(flag) {
-   const flagParentDiv = document.createElement('div');
-   flagParentDiv.setAttribute('class', 'flag');
-   const imgNameSpan = document.createElement('div');
-   const imgTag = document.createElement('img');
-   imgTag.src = "https://www.countryflags.io/"+ flag.alpha2Code +"/flat/48.png"
-   flagParentDiv.setAttribute('title',flag.name);
-   flagParentDiv.setAttribute('data-code',flag.alpha2Code);
-  flagParentDiv.addEventListener('click', function(e) {
-    country(flag.alpha2Code); 
-    window.scrollTo(0,0);
-    //this.classList.toggle('active');
-  });
-   imgNameSpan.innerText = flag.name;
-   flagParentDiv.appendChild(imgTag);             
-   flagParentDiv.appendChild(imgNameSpan);
-   flagDiv.appendChild(flagParentDiv);
- })
-});
-
-function country(code) {
-  fetch('https://api.thevirustracker.com/free-api?countryTotal=' + code)
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    document.getElementById('title').innerHTML = "COVID-19 STATISTICS - " +  data.countrydata[0].info.title;
-    
-    console.log(data.countrydata.total_cases);
-    document.getElementById('total').innerHTML = `<div class="stats">
-      <div class="number">${data.countrydata[0].total_cases}</div>
-      <div class="factor">Infected</div>
-    </div>`;
-  
-  document.getElementById('recover').innerHTML = `<div class="stats">
-      <div class="number">${data.countrydata[0].total_recovered}</div>
-      <div class="factor">Recovered</div>
-    </div>`;
-  
-  document.getElementById('sick').innerHTML = `<div class="stats">
-      <div class="number">${data.countrydata[0].total_active_cases}</div>
-      <div class="factor">Sick</div>
-    </div>`;
-  
-  document.getElementById('dead').innerHTML = `<div class="stats">
-      <div class="number">${data.countrydata[0].total_deaths}</div>
-      <div class="factor">Deaths</div>
-    </div>`; 
-  })
-  .catch((err) => {
-    document.getElementById('total').innerHTML = `<div class="stats">
-      <div class="number">XX</div>
-      <div class="factor">Infected</div>
-    </div>`;
-  
-  document.getElementById('recover').innerHTML = `<div class="stats">
-      <div class="number">XX</div>
-      <div class="factor">Recovered</div>
-    </div>`;
-  
-  document.getElementById('sick').innerHTML = `<div class="stats">
-      <div class="number">XX</div>
-      <div class="factor">Sick</div>
-    </div>`;
-  
-  document.getElementById('dead').innerHTML = `<div class="stats">
-      <div class="number">XX</div>
-      <div class="factor">Deaths</div>
-    </div>`;
-    console.log('Not Infected yet');
-  });
-  
-}
-
-
-
-/*
-total_cases: 199024
-total_recovered: 82779
-total_unresolved: 110719
-total_deaths: 7991
-total_new_cases_today: 803
-total_new_deaths_today: 24
-total_active_cases: 108254
-total_serious_cases: 6417
-*/
+      
 
 var elem = document.getElementById('num');
     var human = document.getElementById('value');
